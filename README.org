@@ -1,0 +1,105 @@
+#+TITLE: PHP 笔记
+
+
+* 安装
+
+最开始的名字：
+: PHP(Personal Home Page), 个人主页
+
+现在的名字:
+: PHP is Hypertext Preprocessor, 超文本预处理器
+
+** WAMP 环境
+200x 开始，互联网潮流催生了 =LAMP= 组合:
+- L: linux
+- A: Apache
+- M: MySQL
+- P: PHP
+
+开发的时候，常用组合是 WAMP，其中把 LINUX 换成了 WINDOWS：
+0. 安装 Windows 操作系统
+1. 安装 [[https://downloads.mariadb.org/mariadb/10.2.11/][MySQL/MariaDB]] 数据库
+2. 下载并解压缩 [[https://www.apachelounge.com/download/][Apache]] 服务器
+3. 下载并解压缩 [[http://windows.php.net/download/][PHP]] 语言 (x64 Thread Safe)
+
+为 Apache 和 PHP 添加环境变量。
+: 提问: 为什么要添加环境变量？？？
+
+配置 php(=php.ini=, 如果没有，将 =php.ini-development= 复制一份为 =php.ini=):
+#+BEGIN_SRC sh
+  ## 修改
+  date.timezone = PRC
+  extension_dir = "D:/software/php7/ext"
+
+  ## 如果要调试的话，下载 Xdebug.dll，然后添加:
+  zend_extension="d:/software/php7/php_xdebug-2.5.5-7.1-vc14-x86_64.dll"
+  xdebug.remote_enable = On
+  xdebug.remote_host=localhost
+  xdebug.remote_port=9000
+  xdebug.remote_handler=dbgp
+#+END_SRC
+
+配置 Apache(=etc/httpd.conf=):
+#+BEGIN_SRC conf
+  # 修改  
+  Listen 9999
+  ServerRoot "D:/software/Apache24"
+  DocumentRoot "E:/www"
+  DirectoryIndex index.html index.php
+
+  # 整合 php，需要添加:
+  PHPIniDir "d:/software/php7"
+  LoadModule php7_module "d:/software/php7/php7apache2_4.dll"
+  AddHandler application/x-httpd-php .php
+  AddType application/x-httpd-php .php .html
+#+END_SRC
+
+如果要开启 php 的扩展支持，需要:
+1. 设置 extension_dir:
+   : extension_dir = "d:\software\php7\ext"
+2. 将相关的插件的注释去掉，或者增加插件的语句:
+   : extension=php_mysqli.dll
+
+** 开发环境最简配置
+首先，下载 php 安装包，安装并配置其环境变量。
+
+其次，创建你的项目，比如在 =E:\www\php=，通过命令行进入这个目录：
+: cmd
+: $ e:
+: $ cd www\php
+: $ php -S localhost:9999
+
+然后，就可以在浏览器中访问了:
+: localhost:9999/index.php
+
+当然，如果你的项目中需要用到数据库，那么请安装 mariadb。
+
+那就可以了。
+
+最后，下载 Sublime/PHPStorm 开发神器。
+
+开始快乐的 php 之旅。
+** Composer 安装
+
+https://getcomposer.org/
+
+下载并安装
+
+将下载的源换为国内的:
+: composer config -g repo.packagist composer https://packagist.phpcomposer.com
+
+下载 phpMyAdmin:
+: composer create-project fillup/phpmyadmin-minimal
+: composer create-project fillup/phpmyadmin-minimal --no-dev  ## 不要下载跟开发相关的东西
+: composer create-project fillup/phpmyadmin-minimal phpmyadmin --no-dev  ## 不要下载跟开发相关的东西
+
+开始 ThinkPHP 项目:
+: composer create-project topthink/thinkphp:3.2.3 blog-tp3 --prefer-dist  ## 如果加上prefer参数，可以指定优先下载什么样的个数
+: composer create-project topthink/think blog-tp5 --prefer-dist
+
+开始一个 Laravel 项目:
+: composer create-project laravel/laravel blog-laravel
+
+开始一个 yii 项目:
+: composer create-project yiisoft/yii2-app-basic blog-yii --prefer-dist
+
