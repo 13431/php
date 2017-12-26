@@ -15,7 +15,7 @@ $s = new Smarty();
 // 3. 设置参数
 $s->setTemplateDir(__DIR__ . "/tpl");
 $s->setCacheDir(__DIR__ . "/tpl/cache");
-$s->setCompileDir(__DIR__ . "tpl/compile");
+$s->setCompileDir(__DIR__ . "/tpl/compile");
 //$s->setLeftDelimiter("{{");
 //$s->setRightDelimiter("}}");
 

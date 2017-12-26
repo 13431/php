@@ -1,0 +1,25 @@
+#+TITLE: Composer 使用
+
+
+在命令行下输入 =composer= 回车后，会发现有如下常用命令
+#+BEGIN_EXAMPLE
+  help            显示帮助
+  home            在浏览器中打开项目的 github/.. 地址
+  search          从仓库中搜索一个包
+  config          配置 composer 参数
+  init            在当前文件夹下初始化一个新的 composer.json 文件
+  install         根据 composer.json/composer.lock 下载依赖并创建项目
+  require         为项目增加一个依赖，是 install 方式的简化形式
+  remove          从项目中删除一个依赖
+  update          更新依赖
+  selfupdate      更新 composer 版本
+  create-project  根据仓库里的 package 在当地创建一个新工程
+#+END_EXAMPLE
+
+*根据 package 创建项目：*:
+: composer create-project topthink/think blog-tp5 --prefer-dist
+
+*为项目添加依赖两种方式:*
+1. 编辑 composer.json -> 执行 composer install
+2. 在项目目录下执行 composer require xxx/yyy
+

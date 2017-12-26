@@ -1,15 +1,12 @@
 #+TITLE: PHP 笔记
 
-
-* 安装
-
 最开始的名字：
 : PHP(Personal Home Page), 个人主页
 
 现在的名字:
 : PHP is Hypertext Preprocessor, 超文本预处理器
 
-** WAMP 环境
+* WAMP 环境
 200x 开始，互联网潮流催生了 =LAMP= 组合:
 - L: linux
 - A: Apache
@@ -60,7 +57,7 @@
 2. 将相关的插件的注释去掉，或者增加插件的语句:
    : extension=php_mysqli.dll
 
-** 开发环境最简配置
+* 开发环境最简配置
 首先，下载 php 安装包，安装并配置其环境变量。
 
 其次，创建你的项目，比如在 =E:\www\php=，通过命令行进入这个目录：
@@ -79,7 +76,7 @@
 最后，下载 Sublime/PHPStorm 开发神器。
 
 开始快乐的 php 之旅。
-** Composer 安装
+* Composer 安装
 
 https://getcomposer.org/
 
@@ -91,10 +88,11 @@ https://getcomposer.org/
 下载 phpMyAdmin:
 : composer create-project fillup/phpmyadmin-minimal
 : composer create-project fillup/phpmyadmin-minimal --no-dev  ## 不要下载跟开发相关的东西
-: composer create-project fillup/phpmyadmin-minimal phpmyadmin --no-dev  ## 不要下载跟开发相关的东西
+: composer create-project fillup/phpmyadmin-minimal phpmyadmin --no-dev  ## 指定文件夹
+: composer create-project fillup/phpmyadmin-minimal --prefer-dist  ## 优先从归档下载
 
 开始 ThinkPHP 项目:
-: composer create-project topthink/thinkphp:3.2.3 blog-tp3 --prefer-dist  ## 如果加上prefer参数，可以指定优先下载什么样的个数
+: composer create-project topthink/thinkphp:3.2.3 blog-tp3 --prefer-dist
 : composer create-project topthink/think blog-tp5 --prefer-dist
 
 开始一个 Laravel 项目:
