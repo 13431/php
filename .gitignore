@@ -1,4 +1,6 @@
 .idea/
-pma/
 vendor/
 runtime/
+pma/
+phpcms/
+log/

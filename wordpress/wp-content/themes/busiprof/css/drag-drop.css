@@ -1,0 +1,97 @@
+.upgrade {
+  background-color: #1d4467;
+  border-color: #1d4467;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+   margin-bottom: 0px;
+  padding: 13px 30px 14px 29px;
+  text-transform: uppercase;
+  width: 54%;
+  border-radius:2px;
+  text-decoration:none;
+  }
+.review {
+  background-color: #82b541;
+  border-color: #1ec846;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block;
+   margin-bottom: 0;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 13px 30px 14px 29px;
+  text-transform: uppercase;
+  width: 54%;
+  border-radius:2px;
+  text-decoration:none;
+}
+.document{
+  background-color: #ee591f;
+  border-color: #ef9c28;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding: 13px 30px 14px 29px;
+  text-transform: uppercase;
+  width: 54%;
+  border-radius:2px;
+  text-decoration:none;
+}
+
+.course{
+  background-color: #0d6db8;
+  border-color: #ef9c28;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding: 13px 30px 14px 29px;
+  text-transform: uppercase;
+  width: 54%;
+  border-radius:2px;
+  text-decoration:none;
+}
+
+.pro-box
+{display:block;text-align:center; margin-bottom: 0px;}
+.pro-vesrion 
+{text-align:center; margin-top:15px;}
+
+.service {
+  background-color: #143745;
+  border-color: #ef9c28;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding: 13px 30px 14px 29px;
+  text-transform: uppercase;
+  width: 54%;
+  border-radius: 2px;
+  text-decoration:none;
+  }
+  .pro-vesrion p{line-height:20px;} 
+
+  label img {border:3px solid #fff;}
+ .selected_img {border:2px solid #ceed1e !important;}
+ 
+ 
+ #accordion-panel-template_settings .accordion-section-title:after, #accordion-section-custom_post_slug_section .accordion-section-title:after, #accordion-section-homepage_layout_manager_section .accordion-section-title:after, #accordion-section-social_icons_section .accordion-section-title:after {content: "\f160";}
+#accordion-section-busi_prof_pro_section .accordion-section-title {background-color:#2A7BC1;color:#fff;}
+
+
+#accordion-section-busiprof_pro_section H3{ background-color:#5ca2df !important; color:#fff !important; }
+#accordion-section-busiprof_email_course_section h3{ font-size: 14px;font-weight: 700;  background-color: #0d6db8 !important;border-color: #ef9c28;
+color: #fff !important;}
+
+#customize-control-busiprof_pro_theme_options-home_client_section_enabled.customize-control-radio label, #customize-control-busiprof_theme_options-home_recentblog_section_enabled.customize-control-radio label, #customize-control-busiprof_theme_options-home_recentblog_meta_enable.customize-control-radio label, #customize-control-busiprof_theme_options-enable_projects.customize-control-radio label, #customize-control-busiprof_theme_options-enable_services.customize-control-radio label, #customize-control-busiprof_theme_options-home_page_slider_enabled.customize-control-radio label, #customize-control-busiprof_theme_options-home_banner_strip_enabled.customize-control-radio label, #customize-control-busiprof_theme_options-home_testimonial_section_enabled.customize-control-radio label, #customize-control-busiprof_pro_theme_options-enable_client_section.customize-control-radio label, #customize-control-busiprof_pro_theme_options-enable_testimonial_section_portfolio.customize-control-radio label, #customize-control-busiprof_pro_theme_options-enable_client_section_portfolio.customize-control-radio label, #customize-control-busiprof_pro_theme_options-contact_google_map_enabled.customize-control-radio label{display:inline-block;}

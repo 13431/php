@@ -1,0 +1,41 @@
+/*
+Theme Name:   vdperanto
+ Description:  A Business theme ideal for creating a corporate or business website. Vdperanto is a child theme of BusiProf WordPress Theme with a white background. Vdperanto is available in different locales.
+ Theme URI:    https://webriti.com/vdperanto-details-page/
+ Author:       webriti
+ Author URI:   https://www.webriti.com
+ Template:     busiprof
+ Version:      1.21
+ Tags: one-column, two-columns, full-width-template, threaded-comments, right-sidebar, custom-menu, sticky-post, translation-ready, featured-images, blog, theme-options, portfolio, photography, entertainment, education, footer-widgets, e-commerce, news
+*/
+.txt-color, .service .post:hover .entry-header .entry-title > a, .other-service .entry-header .entry-title > a:hover, .portfolio-tabs li.active > a, .portfolio-tabs li > a:hover, .portfolio .entry-header .entry-title > a:hover, .paginations span.current, .page-breadcrumb > li a:hover, .page-breadcrumb > li a:focus,.page-breadcrumb > li a, .home-post .entry-header .entry-title > a:hover, .testimonial-scroll .author-name, .home-post .entry-header .entry-title > a:hover, .site-content .post .entry-header .entry-title > a:hover, .entry-meta a:hover, .entry-meta a:focus, .fn, 
+.datetime:hover, .datetime:focus, .reply a, .reply a:hover, .reply a:focus, .widget table tbody a:hover, 
+.widget table #next a:hover, .widget table #next a:focus, 
+.widget table #prev a:hover, .widget table #prev a:focus, .tagcloud a:hover, .tagcloud a:focus,
+.footer-sidebar .tagcloud a:hover, .footer-sidebar .tagcloud a:focus,
+.widget .widget-tabs li.active > a, .widget .widget-tabs li > a:hover, .footer-sidebar .widget .widget-tabs li.active > a, .footer-sidebar .widget .widget-tabs li > a:hover,
+.widget .post .entry-header .entry-title > a:hover, .footer-sidebar .widget .post .entry-header .entry-title > a:hover, .footer-sidebar .widget p a, 
+.footer-sidebar .widget p a:hover,  
+.site-info p a:hover, .site-info p a:focus 
+{ color: #2997ab; }
+
+.widget table tbody a:focus { border: 1px solid #2997ab; }
+
+.avatar .tooltip.top .tooltip-arrow { border-top-color: #2997ab; }
+
+.paginations span.current, .btn-wrap a:hover, .btn-wrap a, .testi-next:hover, .testi-prev:hover, .avatar .tooltip-inner, .widget table caption, .widget table tbody a{
+	background-color: #2997ab; 
+}
+.btn-wrap a:hover {
+   background-image: linear-gradient(to bottom, #2997ab, #2997ab);
+}
+.btn-wrap a:hover {
+    opacity: 0.9;
+}
+.btn-wrap a {
+    background-image: linear-gradient(to bottom, #2997ab, #2997ab);
+	box-shadow: inset 1px 1px 0px 0px #2997ab;
+}
+.flex-btn:hover, .flex-btn:focus, .flex-btn {
+    background-color: #2997ab;
+}
