@@ -1,5 +1,9 @@
 <?php
-// 0. 为项目引入 composer 依赖
+
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
+
+// 0. 为项目引入 smarty 依赖
 //    a) 编辑 composer.json，在 require 节点上，添加 smarty，然后执行 composer install 命令安装依赖
 //    b) 直接在目录下面执行 composer require smarty/smarty 即可。
 
@@ -25,3 +29,12 @@ $s->assign("name", "汤姆.汉克斯");
 // 5. 生成相应文件
 $res = $s->fetch("hello.tpl");
 echo $res;
+
+
+
+// monolog 示例
+$logger = new Logger("evil");
+$loggerHandler = new StreamHandler(__DIR__ . "/log/huairen.log");
+$logger->pushHandler($loggerHandler, LOG_WARNING);
+// 使用
+$logger->addWarning("你是个坏人。");

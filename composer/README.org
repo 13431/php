@@ -16,10 +16,31 @@
   create-project  根据仓库里的 package 在当地创建一个新工程
 #+END_EXAMPLE
 
+*查看帮助:*
+#+BEGIN_SRC sh
+  # 查看 composer require 的使用帮助
+  composer help require
+
+  # 查看 composer create-project 的使用方式
+  composer help create-project
+  #
+  # composer help create-project
+  # Usage:
+  #   create-project [options] [--] [<package>] [<directory>] [<version>]
+  # 
+  # Arguments:
+  #   package                              Package name to be installed
+  #   directory                            Directory where the files should be created
+  #   version                              Version, will default to latest
+#+END_SRC
+
+*配置 composer, 比如增加国内源:*
+: composer config -g repo.packagist composer https://packagist.phpcomposer.com
+: [composer config] [-g ...] [repo.packagist] [composer https://packagist.phpcompser.com]
+
 *根据 package 创建项目：*:
 : composer create-project topthink/think blog-tp5 --prefer-dist
 
 *为项目添加依赖两种方式:*
-1. 编辑 composer.json -> 执行 composer install
+1. 编辑 composer.json -> 执行 composer install/update
 2. 在项目目录下执行 composer require xxx/yyy
-
