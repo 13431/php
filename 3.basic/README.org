@@ -1,0 +1,100 @@
+* Database
+在 php5 之前，推荐使用的方式是例如 php_mysql.dll/php_psql.dll 等原生驱动。
+
+比如, php_mysql.dll 的语法如下:
+#+BEGIN_SRC php
+  // 首先，设置页面编码
+  header("Content-Type: text/html; charset=UTF8");
+
+  // 其次，建立数据库连接
+  $conn = mysql_connect("localhost", "root", "root") or die("数据库连接失败");
+
+  // 创建数据库
+  if(mysql_query("create database xxx", $con)) {
+      echo "创建数据库成功。";
+  } else {
+      echo "创建数据库失败:" . mysql_error() . "<br>";
+  }
+
+  // 切换到数据库
+  mysql_select_db("xxx") or dir("打卡数据库失败。");
+
+  // 设置 utf8 编码
+  mysql_query("select names utf8");
+
+  // 创建表
+  $sql = "create table person
+  (
+    id int primary key auto_increment,
+    name varchar(20) not null,
+    salary float default 1500
+  )
+  ";
+  mysql_query($sql);
+
+  // 插入数据
+  mysql_query("insert into person (name, salary) values ('张飞', 3333)");
+  mysql_query("insert into person (name, salary) values ('关羽', 3334)");
+
+  // 查询数据
+  // 返回结果是：万能的数组
+  $res = mysql_query("select * from person");
+
+  // 显示数据，使用 foreach 循环
+  echo "<table>\n";
+  foreach($res as $r) {
+      echo "  <tr><td>$r[name]</td><td>$r[salary]</td></tr>\n";
+  }
+  echo "\n</table>";
+
+  // 最后，释放连接
+  mysql_close($conn);
+#+END_SRC
+
+因为 mysql 插件有很多问题，所以，后来出现了 =php_mysqli.dll= 插件，其中 i 代表 improvement(改进/升级) 的意思，对连接数据库的效率及安全性进行了大量优化。
+
+mysqli 插件除了完全兼容 mysql 的语法之外，还支持用 oo 的方式连接数据库:
+#+BEGIN_SRC php
+  // 连接数据库
+  $conn = new mysqli("localhost", "root", "root", "text");
+  $conn -> query("set names utf8");
+
+  // 查询
+  $sql = $conn->query("select * from person");
+
+  // 获取结果
+  $res = $conn->fetch_array(MYSQLI_ASSOC);
+
+  // 显示结果
+  echo "<table>\n";
+  echo "<tr><td>" . $res['name'] . "</td><td>" . $res['salary'] . "</td></tr><br>";
+  echo "</table>";
+#+END_SRC
+
+虽然 mysqli 插件已经非常好用。但是...
+
+php 能连接的数据库可不止 mysql 啊，还有 oracle/sqlserver/postgres/sqlite 等，每个数据库都有自己的插件，都有自己的语法...所以后来，PHP 推出了自己的连接数据库的标准, 即 PDO(PHP Data Object) 接口，对数据库的连接进行了规范。所以，采用 DPO 的所有数据库，语法得到了统一:
+#+BEGIN_SRC php
+  // 连接数据库
+  $pdo = new PDO("mysql:host=localhost;dbname=test", "root", "root", "test");
+
+  // 操作数据库n
+  $pdo->exec("set names utf8");
+  $pdo->exec("create table person ...") or die("创建失败");
+  $pdo->exec("insert into  person ...") echo and ("插入成功");
+
+  // query
+  $st = $pdo->query("select xxx from yyy");
+  $rows =  $st->fetch(PDO::FETCH_ASSOC);
+  print_r($rows);
+
+  // 使用 Prepare 的方式进行操作
+  $stmt = $pdo->prepare("select name from person where id = :id");
+  $stmt->bindParam(":id", $xxx, PDO::PARAM_INT);
+  $stmt = $stmt->execute();
+  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  print_r($rows);
+
+  // 释放链接
+  $pdo = null;
+#+END_SRC
