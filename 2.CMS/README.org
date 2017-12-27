@@ -1,4 +1,4 @@
-内容管理系统（英语：Content Management System，缩写为 CMS）是指在一个合作模式下，用于管理工作流程的一套制度。
+内容管理系统（英语：Content Management System，缩写为 CMS）
 
 -------------
 
@@ -12,7 +12,7 @@
 如果创建一个网站，对应上面三种方式:
 1. 第一种, 通过 =php5/php7/composer= 等, 从零开始搭建。
 2. 第二种, 利用成熟框架(=laravel/tp5/yii=), 在框架的基础上构建。
-3. 第三种, 选择一种 =CMS= 系统, 无脑搭建或者...二次开发。
+3. 第三种, 选择一种 =CMS= 系统, 极速搭建或者...在 CMS 的基础上进行二次开发。
 
 对于我们来说，第一种是基础，是必须要花功夫学好的。然后根据自身情况，着重第二种或第三种。
 
@@ -27,14 +27,17 @@
 - Magento, 流行, 强大
 
 综合:
-- dedeCMS(织梦)
-- 帝国CMS
-- phpCMS
-- Joomla!
-- Drupal
+- dedeCMS(织梦)/帝国CMS/PHPCMS
+  : B站等很多知名网站都是基于织梦发展起来的。这个 CMS 成就了很多人。但现在安全方面的问题频出，所以新建站不建议使用。
+  : 建议大家使用 PHPCMS 进行建站尝试。
+- Drupal/Joomla!
+  : 国外流行的 CMS 系统，技术更新，架构更合理，更适合二次开发。
+  : 缺点是，首先有些功能不符合中国国情，需要自己去修改。其次，学习门槛有些高。
 
 博客外衣的:
 - Wordpress
-- bbPress/BuddyPress/WooCommerce plugin
+- bbPress/BuddyPress/WooCommerce 插件
 
 用 WooCommerce 搭建的网店示意: https://porterandyork.com
+
+用 Wordpress 搭建的一些知名网站: https://www.themepark.com.cn/ywordpressdjdyxqqzmwzal.html

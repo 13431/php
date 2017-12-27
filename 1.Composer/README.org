@@ -41,6 +41,13 @@
 *根据 package 创建项目：*:
 : composer create-project topthink/think blog-tp5 --prefer-dist
 
-*为项目添加依赖两种方式:*
-1. 编辑 composer.json -> 执行 composer install/update
-2. 在项目目录下执行 composer require xxx/yyy
+*为项目添加依赖有两种方式:*
+#+BEGIN_SRC sh
+  # 第一种. 编辑 composer.json 后执行:
+  composer install/update
+
+  # 第二种. 在项目目录下执行:
+  composer require smarty/smarty
+  composer require monolog/monolog
+#+END_SRC
+

@@ -1,5 +1,3 @@
-#+TITLE: PHP 笔记
-
 最开始的名字：
 : PHP(Personal Home Page), 个人主页
 
@@ -74,8 +72,11 @@
 那就可以了。
 
 最后，下载 Sublime/PHPStorm 开发神器。
+: 注意，不要使用 notepad 进行开发，因为它会将文件转换为 BOM 格式，会引发一些莫名其妙的问题。
+: 问题：什么是 BOM 呢？
 
 开始快乐的 php 之旅。
+
 * Composer 安装
 
 https://getcomposer.org/
