@@ -91,10 +91,15 @@ php 能连接的数据库可不止 mysql 啊，还有 oracle/sqlserver/postgres/
   // 使用 Prepare 的方式进行操作
   $stmt = $pdo->prepare("select name from person where id = :id");
   $stmt->bindParam(":id", $xxx, PDO::PARAM_INT);
-  $stmt = $stmt->execute();
+  $stmt->execute();
   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
   print_r($rows);
 
   // 释放链接
   $pdo = null;
 #+END_SRC
+
+
+问题:
+: 什么是 SQLITE?
+: 怎么使用 PHP 操作 SQLITE 数据库。
