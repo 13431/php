@@ -73,7 +73,11 @@ mysqli 插件除了完全兼容 mysql 的语法之外，还支持用 oo 的方�
 
 虽然 mysqli 插件已经非常好用。但是...
 
-php 能连接的数据库可不止 mysql 啊，还有 oracle/sqlserver/postgres/sqlite 等，每个数据库都有自己的插件，都有自己的语法...所以后来，PHP 推出了自己的连接数据库的标准, 即 PDO(PHP Data Object) 接口，对数据库的连接进行了规范。所以，采用 DPO 的所有数据库，语法得到了统一:
+php 能连接的数据库可不止 mysql 啊，还有 oracle/sqlserver/postgres/sqlite 等，每个数据库都有自己的插件，都有自己的语法...所以后来，PHP 推出了自己的连接数据库的标准, 即 PDO(PHP Data Object) 接口，对数据库的连接进行了规范。所以，采用 DPO 的所有数据库，语法得到了统一。
+
+http://php.net/manual/zh/book.pdo.php
+
+*请首选 PDO 进行数据库操作:*
 #+BEGIN_SRC php
   // 连接数据库
   $pdo = new PDO("mysql:host=localhost;dbname=test", "root", "root", "test");
