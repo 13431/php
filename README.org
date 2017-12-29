@@ -5,6 +5,8 @@
 现在的名字:
 : PHP is Hypertext Preprocessor, 超文本预处理器
 
+[[https://laravel-china.github.io/php-the-right-way/][PHP, The Right Way]]
+
 * WAMP 环境
 200x 开始，互联网潮流催生了 =LAMP= 组合:
 - L: linux
