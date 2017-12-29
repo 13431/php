@@ -267,7 +267,7 @@ php 真正的力量来自于其数不清的函数。除了使用自定义的函�
   curl_close($curl);
 #+END_SRC
 
-如果觉得 Curl 难用，请使用 Guzzle 模块。首先需要下载:
+如果觉得 Curl 难用，请使用 =Guzzle= 模块。首先需要向项目中添加模块:
 : composer require guzzlehttp/guzzle
 
 Guzzle 示例:
