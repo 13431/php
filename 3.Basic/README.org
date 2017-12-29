@@ -153,6 +153,8 @@ http://www.w3school.com.cn/php/php_ref_array.asp
 
 * 函数
 php 真正的力量来自于其数不清的函数。除了使用自定义的函数，我们也可以自定义函数。
+
+常用函数:
 #+BEGIN_SRC php
   function_exists("some_fun");  // 检查某个函数是否被定义
 
