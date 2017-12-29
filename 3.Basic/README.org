@@ -174,16 +174,123 @@ php 真正的力量来自于其数不清的函数。除了使用自定义的函�
 #+END_SRC
 
 ** 输出函数
-有很多:
+有很多，比如:
 - echo/print
 - print_r
 - var_export/var_dump
 - printf/sprintf
 
+*简单示例:*
+#+BEGIN_SRC php
+  # echo, print 用于输出字符串
+  # 它们是语句不是函数，可以不带括号调用
+  # 区别: echo 可带多参数，print 有返回值
+  echo("go");
+  echo "go", "go";
+
+  # print_r 是函数，可输出复杂对象
+  # 如果第二个参数为 true，那么不打印，只返回字符串
+  print_r($arr);
+  $ret = print_r($str, true);
+
+  # printf/sprintf 用来格式化字符串
+  # 不过，前者为了打印，后者为了返回
+  printf("String: %s", "a demo string");
+
+  # var_export/var_dump 用来显示变量情况
+  var_export($v);
+#+END_SRC
+
 ** 文件操作
-** 加密解密
+简单示例:
+#+BEGIN_SRC php
+  // demo file
+  $filename = "e:/xxx.txt";
+
+  // open -> operate -> close
+  @$myfile = fopen($filename, "r") or die("unable to open file");
+  echo fread($myfile, filesize($filename));
+  fclose($myfile);
+
+  // 读取文件并显示到页面
+  // readFile 也可以用来下载
+  $content = readFile($filename);
+
+  // 读取文件到数组/字符串
+  $arr = file($filename);
+  $str = file_get_content();
+
+  // 其他很多，比如 feof/fgetc/fgets/fwrite/scandir 等
+#+END_SRC
+
 ** 日期函数
+使用日期前需要先设置时区，要么代码中设定，要么 php.ini 中设置:
+: date_default_timezone_set('Asia/Shanghai');
+: ini_set('date.timezone','PRC');
+
+*常用日期函数有:*
+- date(format, timestamp) 获取时间
+- mktime(hour,minute,second,month,day,year) 创建时间
+- time() 获取时间，整数
+
+*format:*
++ d - 表示月里的某天（01-31）
++ m - 表示月（01-12）
++ Y - 表示年（四位数）
++ 1 - 表示周里的某天
++ h - 带有首位零的 12 小时小时格式
++ i - 带有首位零的分钟
++ s - 带有首位零的秒（00 -59）
++ a - 小写的午前和午后（am 或 pm）
+
+示例:
+#+BEGIN_SRC php
+  date_default_timezone_set("Asia/Shanghai");
+  echo "今天是 " . date("Y/m/d") . "<br>";
+  echo "现在时间是 " . date("h:i:sa");
+#+END_SRC
+
+另外，请大家自行研究 =DataTime= 类的使用。
+
+更改日期函数: http://www.w3school.com.cn/php/php_ref_date.asp
+
 ** 上传下载
+使用 CURL 扩展进行上传下载，需要打开 =php_curl.dll= 插件支持:
+#+BEGIN_SRC php
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, 'https://image.baicai.me/pic.html');
+  curl_setopt($curl, CURLOPT_POST, 1);
+  curl_setopt($curl, CURLOPT_POSTFIELDS, $fileds);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+  curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
+  curl_close($curl);
+#+END_SRC
+
+如果觉得 Curl 难用，请使用 Guzzle 模块。首先需要下载:
+: composer require guzzlehttp/guzzle
+
+Guzzle 示例:
+#+BEGIN_SRC php
+  $url = 'https://www.qiushibaike.com/';
+  $client = new Client();
+
+  # get/post/...
+  $reponse = $client->get($url);
+  $r = $client->request('POST', 'http://httpbin.org/post', ['body' => $body]);
+
+  # aync request
+  $promise = $client->getAsync('http://httpbin.org/get');
+  $promise->then(
+      function (ResponseInterface $res) {
+          echo $res->getStatusCode() . "\n";
+      },
+      function (RequestException $e) {
+          echo $e->getMessage() . "\n";
+          echo $e->getRequest()->getMethod();
+      }
+  );
+#+END_SRC
 
 * 面向对象(OOP)
 
