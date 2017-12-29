@@ -229,8 +229,8 @@ php 真正的力量来自于其数不清的函数。除了使用自定义的函�
 : ini_set('date.timezone','PRC');
 
 *常用日期函数有:*
-- date(format, timestamp) 获取时间
 - mktime(hour,minute,second,month,day,year) 创建时间
+- date(format, timestamp) 获取时间
 - time() 获取时间，整数
 
 *format:*
@@ -247,10 +247,10 @@ php 真正的力量来自于其数不清的函数。除了使用自定义的函�
 #+BEGIN_SRC php
   date_default_timezone_set("Asia/Shanghai");
   echo "今天是 " . date("Y/m/d") . "<br>";
-  echo "现在时间是 " . date("h:i:sa");
+  echo "现在时间是 " . date("H:i:s");
 #+END_SRC
 
-另外，请大家自行研究 =DataTime= 类的使用。
+另外，请大家自行研究 =DateTime= 类的使用。
 
 更改日期函数: http://www.w3school.com.cn/php/php_ref_date.asp
 
