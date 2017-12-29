@@ -218,7 +218,7 @@ php 真正的力量来自于其数不清的函数。除了使用自定义的函�
 
   // 读取文件到数组/字符串
   $arr = file($filename);
-  $str = file_get_content();
+  $str = file_get_content($filename); // file_set_content();
 
   // 其他很多，比如 feof/fgetc/fgets/fwrite/scandir 等
 #+END_SRC
