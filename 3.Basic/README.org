@@ -6,7 +6,8 @@
 2. 因为所有变量都是 $ 开始，所以，解析起来非常 easy，能够减少解析的时间，提高解析的效率。
 3. 我们所有看代码的人，看到 $ 符号，就知道，这是个变量，所以，能够减少我们看代码的大脑消耗，也就是易阅读。
 4. 所以，php 又有一个名字，叫面向美元编程的语言，无形增加了大家对 php 的喜爱还有追求。
-5. 其实，这些玩意，是从 perl 还有 shell 编程中借鉴的。
+5. 可以非常方便把变量嵌入到字符串中，即所谓的模板字符串。
+6. 其实，这些玩意，是从 perl 还有 shell 编程中借鉴的。
 
 #+BEGIN_SRC php
   # // /* */ 注释有很多种，可以是 shell 格式的注释，也可以是 c 格式的注释，特别自由。
@@ -16,9 +17,120 @@
   yourname = "kitty";   // error!
   $yourName = "Kitty";
   $变量a = "hahaha";
+
+  // 跟变量相关的一些函数
+  isset();    // 测试变量是否已经被定义
+  unset();    // 将一个变量定义删除掉
+  gettype();  // 获取一个变量的数据类型
+  is_int();   // 判断一个变量是否为 int 类型
+  empty();    // 判断一个变量是否为空，0/null/[]/false/"" 等等
+  var_dump(); // 打印变量的类型
+  var_export();
 #+END_SRC
 
 ** 常量
+定义之后就不会发生变化的量
+
+#+BEGIN_SRC php
+  define("COUNTRY", "中华人民共和国");
+  define("COUNTRY", "朝鲜");  // 再次定义是无效的
+  echo COUNTRY;  ## 中华人民共和国
+#+END_SRC
+
+几个特殊的常量:
+: __LINE__/__DIR__/__FILE__/PHP_VERSION/PHP__MAJOR__VERSION
+
+** 作用域(Scope)
+在 php 中，有三种作用域:
+1. Global, 全局作用域
+2. Local, 函数内部作用域
+3. Static, 静态作用域
+4. 超级全局作用域
+   - $_GET
+   - $_POST
+   - $_FILES
+   - $_REQUEST
+   - $_COOKIE
+   - $_SESSION
+   - $_SERVER
+   - $_ENV
+
+** int/float/bool/resource/null
+int/float 分别代表整数和浮点数。
+
+bool 类型有两个值, 分别是 true/false，用来做逻辑判断
+
+resource 代表打开的文件或数据库等资源。
+打开的文件会自动释放，不需要我们手动关闭。
+但是，数据库还是需要我们自己手动释放的。
+
+null 表示空。
+
+
+** String
+函数列表:
+
+http://www.w3school.com.cn/php/php_ref_string.asp
+
+#+BEGIN_SRC php
+  // 有三种写法:
+  // 1. 使用双引号引起来的写法
+  // 2. 使用单引号引起来的写法
+  // 3. HEREDOC 方式的写法
+
+
+  // 比较重要的函数:
+  strstr()/substr()/strpos()/strlen();
+  md5()/...();
+      
+#+END_SRC
+
+** Array
+PHP 中最核心的数据库类型，号称 *万能的数组* 。
+
+数组分为三种:
+1. 索引数组，即以数字为下标
+2. 关联数组，即以字符串为下标
+3. 多维数组，数组里有数组
+
+使用关键词 =array()= 初始化一个数组:
+#+BEGIN_SRC php
+  $cars = array();
+
+  // 所谓的索引数组
+  $cars = array("宝马", "奔驰", "奥迪");
+  $cars = array(0 => "宝马", 1 => "奔驰", 2 => "奥迪");
+
+  echo "我有很多车，比如，我有一辆" . $cars[0];
+  var_dump($cars);
+
+  // 所谓的关联数组
+  $car = array("name" => "宝马", "price" => 888898);
+  echo "我有一辆车，它的品牌叫" . $car["name"];
+
+  // 所谓的多维数组
+  $cars = array(
+      array("name" => "宝马", "price" => 888898),
+      array("name" => "奔驰", "price" => 688898),
+      array("name" => "奥迪", "price" => 678898)
+  );
+
+  // 从 php 5.x 开始，初始化数组的语句可以简化为
+  $cars = [
+      ["name" => "宝马", "price" => 888898],
+      ["name" => "奔驰", "price" => 688898],
+      ["name" => "奥迪", "price" => 678898]
+  ];
+  print_r($cars);
+#+END_SRC
+
+数组相关的函数们，你们好啊！
+http://www.w3school.com.cn/php/php_ref_array.asp
+
+问题:
+: 1. INF 是什么意思
+: 2. PHP 中能够表现的最大数字是多少
+: 3. 如何在 PHP 中输出 1x2x3...x9999x10000 的结果
 
 * 控制流程
 
