@@ -153,6 +153,22 @@ http://www.w3school.com.cn/php/php_ref_array.asp
 
 * 函数
 php 真正的力量来自于其数不清的函数。除了使用自定义的函数，我们也可以自定义函数。
+#+BEGIN_SRC php
+  function_exists("some_fun");  // 检查某个函数是否被定义
+
+  // 所有以 get 开始的函数们，你们好吗？
+  get_declared_classes/interfaces/traints(); // 显示所有
+  get_defined_vars/contants/functions();     // 显示所有
+  get_included_files();
+  get_loaded_extensions();
+  get_head/getallheaders();
+  getcwd/getenv/getdate/gethostbyname...();
+
+  // call_user_func/call_user_func_array()
+  // 动态调用函数，相当于 eval, 免去了 new 对象过程
+  class A { function b($name) {} }
+  call_user_func_array(['A', 'b'], ['jerry']);
+#+END_SRC
 
 ** 自定义函数
 #+BEGIN_SRC php
