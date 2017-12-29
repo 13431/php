@@ -133,8 +133,57 @@ http://www.w3school.com.cn/php/php_ref_array.asp
 : 3. 如何在 PHP 中输出 1x2x3...x9999x10000 的结果
 
 * 控制流程
+*条件判断:*
+- if 语句，如果条件为真，那么执行代码
+- if..else，如果条件威震，执行代码，否则，执行 else 里的代码
+- if..elseif..else，根据条件，选择某个分支的代码来执行
+- switch 语句，是上面多分支选择方式的另一种写法，更加简洁
+
+*循环迭代:*
+- while，只要条件为真，就一直执行
+- do..while，先执行一次，后面判断条件。只要条件为真，就一直执行
+- for，循环代码块执行次数
+- foreach，遍历数组中的每个元素
+
+*包含/加载:*
+- include
+- include_once
+- require
+- require_once
 
 * 函数
+php 真正的力量来自于其数不清的函数。除了使用自定义的函数，我们也可以自定义函数。
+
+** 自定义函数
+#+BEGIN_SRC php
+  // 定义函数
+  function sayHello($name) {
+      echo "Hello $name!";
+  }
+  // 调用函数
+  sayHello("TOM");
+
+  // 可以使用默认参数
+  function double($n = 1) {
+      $res = $n * 2;
+      echo "Double of $n is $res.";
+      return $res;
+  }
+  $r = double();
+  $r = doule(222);
+#+END_SRC
+
+** 输出函数
+有很多:
+- echo/print
+- print_r
+- var_export/var_dump
+- printf/sprintf
+
+** 文件操作
+** 加密解密
+** 日期函数
+** 上传下载
 
 * 面向对象(OOP)
 
