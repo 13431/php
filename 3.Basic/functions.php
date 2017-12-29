@@ -1,14 +1,21 @@
 <?php
 
-$arr = file("E:/www/3.Basic/database.php");
+// 判断变量是否定义
+isset($name);
 
-foreach ($arr as $item => $value) {
-    echo <<<BBB
-<div style="color: red">
-   <pre>第 $item 行:     $value</pre>
-</div>
-BBB;
 
+if(!function_exists("xxxx")) {
+    function xxxx() {
+        echo "meisha, shiyaneryi";
+    }
 }
 
+
+
+$arr = file("E:/www/3.Basic/database.php");
+
+
 // print_r(get_defined_functions());
+
+//xxxx();
+call_user_func_array("xxxx", []);
