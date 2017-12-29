@@ -161,7 +161,7 @@ php 真正的力量来自于其数不清的函数。除了使用自定义的函�
       echo "Hello $name!";
   }
   // 调用函数
-  sayHello("TOM");
+  sayHello("TOM");  # Hello Tom!
 
   // 可以使用默认参数
   function double($n = 1) {
@@ -170,7 +170,7 @@ php 真正的力量来自于其数不清的函数。除了使用自定义的函�
       return $res;
   }
   $r = double();
-  $r = doule(222);
+  $r = double(222);
 #+END_SRC
 
 ** 输出函数
