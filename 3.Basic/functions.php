@@ -19,3 +19,4 @@ $arr = file("E:/www/3.Basic/database.php");
 
 //xxxx();
 call_user_func_array("xxxx", []);
+

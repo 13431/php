@@ -82,7 +82,7 @@ http://www.w3school.com.cn/php/php_ref_string.asp
   // 比较重要的函数:
   strstr()/substr()/strpos()/strlen();
   md5()/...();
-      
+
 #+END_SRC
 
 ** Array
@@ -311,7 +311,63 @@ Guzzle 示例:
 #+END_SRC
 
 * 面向对象(OOP)
+* 异常处理
+首先, PHP 默认是轻异常的语言。
 
+如果出错，除非非常严重，都会继续执行。
+
+错误信息，会在页面上显示出来。
+
+可以定制什么样的错误会被显示:
+- 通过修改 ini 文件中的 error_reporting
+- 在 php 中执行函数 error_reporting
+
+也可以通过 @ 符号，去抑制错误信息。
+
+你也可以定制，出现错误后如何处理:
+#+BEGIN_SRC php
+  function error_rep($errno, $errstr) {
+      echo "<br>出现了一个不应该出现的错误 hahaha";
+  }
+  set_error_handler(error_rep);
+#+END_SRC
+
+php5 提供了一种面向对象的错误处理方式，也就是异常。变成了重异常的机制:
+#+BEGIN_SRC php
+  // 使用示例
+  try {
+      throw new Exception("description");
+  } catch (Exception $e) {
+      echo "error: " . $e->getMessage();
+  }
+
+  // 可以通过注册默认处理器的方式，处理未捕获异常
+  set_exception_handler(function ($e) {
+      // 写我们的异常处理方式
+      // 1. 显示什么给用户
+      // 2. 跳转到什么页面
+      // 3. 将相关错误日志保存到文件或数据库
+      // 4. 其他
+  }
+#+END_SRC
+
+* Web
+** request
+- _GET
+- _POST
+- _FILES
+
+** validate
+- filter_var
+- filter_input
+- 正则表达式 preg_match
+
+
+** header
+去设置请求相应的头部
+
+** cookie
+** session
 * Database
 在 php5 之前，推荐使用的方式是例如 php_mysql.dll/php_psql.dll 等原生驱动。
 
