@@ -7,3 +7,6 @@ use \aaa\Student;
 
 $s = new Student();
 $s->xxx();
+
+header("Location: /index.php");
+

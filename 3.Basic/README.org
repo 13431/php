@@ -311,6 +311,28 @@ Guzzle 示例:
 #+END_SRC
 
 * 面向对象(OOP)
+略
+
+* 命名空间
+命名空间是为了防止类名冲突。
+
+student.php, 定义:
+#+BEGIN_SRC php
+  // 定义文件中的命名空间
+  namespace aaa\bbb;
+  class Student {}  // 所以，这个类的全名是 aaa\bbb\Student
+#+END_SRC
+
+index.php, 使用
+#+BEGIN_SRC php
+  require "student.php";
+  // 使用类的全名调用相关类
+  new \aaa\bbb\Student();
+  // 或者
+  use aaa\bbb\Student;
+  new Student();
+#+END_SRC
+
 * 异常处理
 首先, PHP 默认是轻异常的语言。
 
@@ -352,22 +374,41 @@ php5 提供了一种面向对象的错误处理方式，也就是异常。变成
 #+END_SRC
 
 * Web
-** request
-- _GET
-- _POST
-- _FILES
+** 1. 获取参数
+_GET/_POST/_FILES
 
-** validate
-- filter_var
-- filter_input
-- 正则表达式 preg_match
+** 2. 数据验证
+1. 使用 =empty/length= 等进行简单校验
+2. 使用正则表达式进行通用校验(=preg_match= 等)
+3. 使用内置的校验函数 =filter_var/filter_input= 等进行快速校验
 
+** 3. 响应数据
+通过 echo 将字符串返回给客户端。
 
-** header
-去设置请求相应的头部
+使用 header 设置响应的头部，或者完成页面跳转:
+#+BEGIN_SRC php
+  # 设置返回格式还有字符集
+  header("Content-Type: text/html;charset=UTF-8");
+
+  # 页面重定向
+  header("Location: http://www.bing.com");
+#+END_SRC
 
 ** cookie
+: _COOKIE
+: setcookie($name, $value, $expired);
+
 ** session
+session 必须先要开启才能使用：
+#+BEGIN_SRC php
+  # 开启，需要写在最前面
+  session_start();
+  # 状态
+  session_status();
+  # 销毁
+  session_destroy();
+#+END_SRC
+
 * Database
 在 php5 之前，推荐使用的方式是例如 php_mysql.dll/php_psql.dll 等原生驱动。
 
