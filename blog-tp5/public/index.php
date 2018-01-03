@@ -11,6 +11,8 @@
 
 // [ 应用入口文件 ]
 
+define("PROJECT_NAME", '世界上最牛逼的博客');
+
 // 定义应用目录
 define('APP_PATH', __DIR__ . '/../application/');
 // 加载框架引导文件

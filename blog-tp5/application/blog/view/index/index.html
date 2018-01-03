@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    
+</head>
+<body>
+<pre>
+    - {$chuandiyigecanshugeimubanyinqing}
+</pre>
+
+<pre>
+    - {$wannengdeshuzu.name}的作品为{$wannengdeshuzu['book']}
+</pre>
+
+<pre>
+    - 能不能取到 app_namespace? {$Think.config.app_namespace}
+</pre>
+
+<pre>
+    - 常量的显示: {$Think.const.PROJECT_NAME}
+</pre>
+
+<table>
+    <thead>
+    <tr>
+        <th>书名</th>
+        <th>价格</th>
+    </tr>
+    </thead>
+    <tbody>
+    {volist name="henduoshu" id="v"}
+    <tr><td>{$v.name}</td><td>{$v.price}</td></tr>
+    {/volist}
+    </tbody>
+</table>
+
+
+</body>
+</html>

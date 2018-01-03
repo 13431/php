@@ -1,6 +1,6 @@
 {
-    "name": "topthink/think",
-    "description": "the new thinkphp framework",
+    "name": "你的名字/项目名字",
+    "description": "这是一个博客项目",
     "type": "project",
     "keywords": [
         "framework",
