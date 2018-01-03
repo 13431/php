@@ -1,7 +1,7 @@
 *ThinkPHP 5.0*
 ---------------------
 
-* 文件加载顺序
+* 一个完整请求文件加载顺序
 #+BEGIN_EXAMPLE
   ./public/index.php ( 0.85 KB )
   ./thinkphp/start.php ( 0.74 KB )
