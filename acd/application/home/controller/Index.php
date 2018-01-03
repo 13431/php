@@ -9,7 +9,7 @@ class Index extends Controller
 {
     public function index()
     {
-        pp("哈哈，我是蓝色的吗？");
+hahaha();
     }
 
     public function testdb() {

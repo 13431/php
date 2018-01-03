@@ -9,6 +9,10 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+function hahaha () {
+    echo "hahahahhahahh";
+}
+
 return [
     // 数据库类型
     'type'            => 'mysql',

@@ -11,8 +11,3 @@
 
 // 应用公共文件
 
-function pp($o) {
-    echo "<div style='color: pink; font-size: 40px'>";
-    echo $o;
-    echo "<div>";
-}

@@ -9,6 +9,12 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+function pp($o) {
+    echo "<div style='color: blue; font-size: 40px'>";
+    echo $o;
+    echo "<div>";
+}
+
 // [ 应用入口文件 ]
 
 // 定义应用目录
