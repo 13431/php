@@ -43,3 +43,19 @@
   ./thinkphp/library/think/debug/Html.php ( 4.27 KB )
   ./thinkphp/library/think/Cache.php ( 6.34 KB )
 #+END_EXAMPLE
+
+去除其中的类文件，加载顺序为:
+#+BEGIN_EXAMPLE
+  ./public/index.php ( 0.85 KB )
+  ./thinkphp/start.php ( 0.74 KB )
+  ./thinkphp/base.php ( 2.66 KB )
+  ./thinkphp/convention.php ( 10.39 KB )
+  ./application/config.php ( 0.40 KB )
+  ./application/database.php ( 1.91 KB )
+  ./application/tags.php ( 0.96 KB )
+  ./application/common.php ( 0.60 KB )
+  ./thinkphp/helper.php ( 17.87 KB )
+  ./thinkphp/lang/zh-cn.php ( 11.72 KB )
+  ./application/route.php ( 0.81 KB )
+  ./runtime/temp/2d937ccd686c8fbbb13401d7101807f5.php ( 1.02 KB )
+#+END_EXAMPLE
