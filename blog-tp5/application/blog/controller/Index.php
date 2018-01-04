@@ -12,6 +12,10 @@ class Index extends Controller
         return $this->fetch();
     }
 
+    public function article() {
+        return $this->fetch();
+    }
+
     public function demo() {
         // 获取数据
         $t = db("article");

@@ -1,190 +1,60 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+{extend name="_cfxfd/layout2"}
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
-          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
-            integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
-            crossorigin="anonymous"></script>
+{block name="head"} <title>我的文章</title> {/block}
+
+{block name="after"}
+<script>alert(00009990);</script>
+{/block}
 
 
-    <style>
-        #carouselExampleIndicators img {
-            height: 250px;
-        }
 
-    </style>
-    <title>我的博客</title>
-</head>
-<body>
-<div class="container">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">
-                <img src="http://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30"
-                     class="d-inline-block align-top" alt="">
-                我的博客
-            </a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+{block name="body"}
+<nav class="nav justify-content-end">
+    <a class="nav-link active" href="#">最热排行</a>
+    <a class="nav-link" href="#">按价格排行</a>
+    <a class="nav-link" href="#">卖出最多</a>
+</nav>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">我的首页 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            博客分类
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">生活</a>
-                            <a class="dropdown-item" href="#">学习</a>
-                            <a class="dropdown-item" href="#">游戏</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">其他</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0" action="demo.html">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索站内</button>
-                </form>
-            </div>
-        </nav>
-    </header>
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" style="">
-            <div class="carousel-item active">
-                <img class="d-block w-100"
-                     src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515638053&di=828d41796bf84246118252035b527cd3&imgtype=jpg&er=1&src=http%3A%2F%2Fimg001.21cnimg.com%2Fphotos%2Falbum%2F20131223%2Fm600%2FE426C9E57243122EF7BBD13459B690CE.jpeg"
-                     alt="First slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100"
-                     src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515043333247&di=ff8e0fa70e3cc6fab16d833a425c02b4&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fc8ea15ce36d3d539890d2aef3187e950352ab0ed.jpg"
-                     title="老虎不发威，你当我是 tomcat ？">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100"
-                     src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515043333247&di=b62495eeeac8edc7520b67f11e95c8d4&imgtype=0&src=http%3A%2F%2Fcs.vmovier.com%2FUploads%2Fpost%2F2015-03-22%2F550e284a7b9d9.jpg"
-                     alt="我是一只狮子">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>你们说，狮子可不可怕？</h5>
-                    <p>可不可怕不重要，重要的是要可爱。你说是吗？ hello kitty?</p>
-                </div>
-            </div>
+<ul class="list-unstyled">
+    <li class="media">
+        <img class="mr-3" src="..." alt="Generic placeholder image">
+        <div class="media-body">
+            <h5 class="mt-0 mb-1">List-based media object</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+            purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+            vulputate fringilla. Donec lacinia congue felis in faucibus.
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">上一张</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">下一张</span>
-        </a>
-    </div>
-
-    <div class="row" id="main">
-        <div class="col-sm-8">
-            <nav class="nav justify-content-end">
-                <a class="nav-link active" href="#">最热排行</a>
-                <a class="nav-link" href="#">按价格排行</a>
-                <a class="nav-link" href="#">卖出最多</a>
-            </nav>
-
-
-            <ul class="list-unstyled">
-                <li class="media">
-                    <img class="mr-3" src="..." alt="Generic placeholder image">
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1">List-based media object</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
-                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-                        vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </li>
-                <li class="media my-4">
-                    <img class="mr-3" src="..." alt="Generic placeholder image">
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1">List-based media object</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
-                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-                        vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </li>
-                <li class="media">
-                    <img class="mr-3" src="..." alt="Generic placeholder image">
-                    <div class="media-body">
-                        <h5 class="mt-0 mb-1">List-based media object</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
-                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-                        vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </li>
-            </ul>
-
-
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item"><a class="page-link" href="#">前一页</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">后一页</a></li>
-                </ul>
-            </nav>
+    </li>
+    <li class="media my-4">
+        <img class="mr-3" src="..." alt="Generic placeholder image">
+        <div class="media-body">
+            <h5 class="mt-0 mb-1">List-based media object</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+            purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+            vulputate fringilla. Donec lacinia congue felis in faucibus.
         </div>
-
-        <div class="col">
-            <figure class="figure img-round">
-                <img style="height: 300px; width: 100%;"
-                     src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515044117593&di=232fc98bad8b56c73e35dd247d467161&imgtype=0&src=http%3A%2F%2Fpic27.photophoto.cn%2F20130601%2F0006019050921693_b.jpg"
-                     class="figure-img img-fluid rounded"
-                     alt="A generic square placeholder image with rounded corners in a figure.">
-                <figcaption class="figure-caption">我是一个拉风的人.</figcaption>
-            </figure>
-
-            <h1>热榜排行</h1>
-            <ul class="list-unstyled" id="hehehe">
-                <li><a href="#">文章链接</a></li>
-                <li><a href="#">文章链接</a></li>
-                <li><a href="#">文章链接</a></li>
-                <li><a href="#">文章链接</a></li>
-                <li><a href="#">文章链接</a></li>
-                <li><a href="#">文章链接</a></li>
-                <li><a href="#">文章链接</a></li>
-                <li><a href="#">文章链接</a></li>
-            </ul>
+    </li>
+    <li class="media">
+        <img class="mr-3" src="..." alt="Generic placeholder image">
+        <div class="media-body">
+            <h5 class="mt-0 mb-1">List-based media object</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
+            purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+            vulputate fringilla. Donec lacinia congue felis in faucibus.
         </div>
-    </div>
-    <footer>底部栏</footer>
+    </li>
+</ul>
 
-</div>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="#">前一页</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">后一页</a></li>
+    </ul>
+</nav>
 
-
-</body>
-</html>
+{/block}
 
