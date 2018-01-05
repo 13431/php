@@ -24,6 +24,14 @@ CREATE TABLE article
 );
 ALTER TABLE article COMMENT = '文章';
 
+drop TABLE blog_option;
+CREATE TABLE blog_option(
+  id int PRIMARY KEY AUTO_INCREMENT,
+  image varchar(600),
+  status varchar(200)
+);
+INSERT INTO blog_option (image, status) VALUES ('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515718726&di=2558cccea987cb602cdb67d453ee230e&imgtype=jpg&er=1&src=http%3A%2F%2Fpic.hualongxiang.com%2Fattachment%2Fthumb%2FDay_151113%2F1054_2249011_158e15716cc8c1f5.jpg', '我是一个非常非常拉风的男人。');
+
 CREATE TABLE user
 (
   id int PRIMARY KEY AUTO_INCREMENT,

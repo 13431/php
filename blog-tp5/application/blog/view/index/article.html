@@ -1,7 +1,24 @@
 {extend name="_cfxfd/layout"}
 
 {block name="body"}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/blog/index/index">首页</a></li>
+        <li class="breadcrumb-item active" aria-current="page">文章查看</li>
+    </ol>
+</nav>
 
-我是文章的内容啊。。。。此处有掌声.
+<article>
+<header>
+    <h3>{$article.title}</h3>
+</header>
+    <hr/>
+    <div>
+{$article.content}
+    </div>
 
+<footer class="text-right text-danger">
+    撰写于 {$article.time}
+</footer>
+</article>
 {/block}

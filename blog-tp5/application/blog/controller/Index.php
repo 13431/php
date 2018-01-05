@@ -2,17 +2,26 @@
 namespace app\blog\controller;
 
 use think\Controller;
+use think\Db;
 
-class Index extends Controller
+class Index extends Base
 {
     public function index() {
-        $this->assign("user", db("user")->where('username', '=', 'admin')->select());
-        $this->assign("cates", db("category")->select());
         $this->assign("articles", db("article")->paginate(2));
         return $this->fetch();
     }
 
-    public function article() {
+    public function article($id) {
+        $this->assign("article", db("article")->where("id", "=", $id)->find());
+        return $this->fetch();
+    }
+
+    public function category($id) {
+        echo "hello, $id";
+    }
+
+    public function search($keyword) {
+        $this->assign("articles", db("article")->where("keywords", "like", "%" . $keyword . "%")->paginate(3));
         return $this->fetch();
     }
 

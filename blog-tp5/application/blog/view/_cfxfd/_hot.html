@@ -1,13 +1,8 @@
 <div>
     <h1>文章排行</h1>
     <ul class="list-unstyled ml-3">
-        <li><a href="#">文章链接33333</a></li>
-        <li><a href="#">文章链接33333</a></li>
-        <li><a href="#">文章链接33333</a></li>
-        <li><a href="#">文章链接33333</a></li>
-        <li><a href="#">文章链接33333</a></li>
-        <li><a href="#">文章链接33333</a></li>
-        <li><a href="#">文章链接33333</a></li>
-        <li><a href="#">文章链接33333</a></li>
+        {volist name="hots" id="hot"}
+        <li><a href="/blog/index/article?id={$hot.id}">{$hot.title}</a></li>
+        {/volist}
     </ul>
 </div>

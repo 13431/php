@@ -1,8 +1,7 @@
 {extend name="_cfxfd/layout"}
 
-{block name="head"} <title>我的文章</title> {/block}
-
 {block name="body"}
+<p>搜索的关键词是: <span class="text-success">{$Request.get.keyword}</span></p>
 <div>
     {volist name="articles" id="v"}
     <div class="card mt-5">
@@ -17,6 +16,5 @@
     <div class="mt-5">
         {$articles->render()}
     </div>
-
 </div>
 {/block}
