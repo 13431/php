@@ -1,10 +1,15 @@
 <?php
 
-define('APP_PATH', __DIR__ . '/app/');
+// 显示所有的商品
 
-require "config/config.php";
-require "helper.php";
+// 1. 连接数据库
+$link=mysqli_connect("localhost","root","root","php_learning","3306");
+// 2. 取出数据
+mysqli_query($link,"set names utf8");
+$sql="select * from production";
+$result=mysqli_query($link,$sql);
+// 3. 渲染数据
 
-echo "<pre style='color: red;'>";
-require __DIR__ . '/tp5/start.php';
-echo "</pre>";
+$result->fetch_all();
+
+mysqli_close($link);
