@@ -4,5 +4,52 @@
 
 {:renderBread(["文章管理", "添加文章"])}
 
+<form action="/admin/article/save" method="post" class="form form-horizontal" id="form-admin-add">
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>文章标题：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" value="" placeholder="文章标题" id="title" name="title">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>文章作者：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" value="" placeholder="文章作者" id="author" name="author">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>文章关键词：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" autocomplete="off" value="" placeholder="关键词，请使用 , 分割" id="keywords" name="keywords">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>文章摘要：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" autocomplete="off"  placeholder="文章摘要，至少要200字" id="digest" name="digest">
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3">文章分类：</label>
+        <div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
+				<select class="select" name="cateid" size="1">
+					<option value="0">学习</option>
+					<option value="3">劳动</option>
+				</select>
+				</span>
+        </div>
+    </div>
+    <div class="row cl">
+        <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>文章内容：</label>
+        <div class="formControls col-xs-8 col-sm-9 skin-minimal">
+            <textarea type="text" class="textarea" value="" placeholder="请输入内容，至少500字" id="content" name="content"></textarea>
+        </div>
+    </div>
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+            <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+        </div>
+    </div>
+</form>
 
 {/block}

@@ -59,3 +59,9 @@
   ./application/route.php ( 0.81 KB )
   ./runtime/temp/2d937ccd686c8fbbb13401d7101807f5.php ( 1.02 KB )
 #+END_EXAMPLE
+* 其他
+** 如何让 footer 永远在最下面
+
+看这个链接，说了很多方法，很全:
+
+https://css-tricks.com/couple-takes-sticky-footer/
