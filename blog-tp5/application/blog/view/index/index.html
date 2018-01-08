@@ -5,11 +5,11 @@
 {block name="body"}
 <div>
     {volist name="articles" id="v"}
-    <div class="card mt-5">
+    <div class="card mt-1">
         <div class="card-body">
             <h5 class="card-title">{$v.title}<small>    作者:{$v.author}</small></h5>
             <p class="card-text">{$v.digest}</p>
-            <a href="/blog/index/article/id/{$v.id}" class="text-right card-link">点击阅读</a>
+            <a href="/blog/index/article/id/{$v.id}" class="float-right card-link">点击阅读</a>
         </div>
     </div>
     {/volist}
