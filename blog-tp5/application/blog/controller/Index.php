@@ -13,8 +13,10 @@ class Index extends Base
 
     public function article($id) {
         $this->assign("article", db("article")->where("id", "=", $id)->find());
+
         // 需要每次有点击，就将点击数增加一
-        // ....
+        db("article")->where("id", $id)->setInc("click");
+
         return $this->fetch();
     }
 

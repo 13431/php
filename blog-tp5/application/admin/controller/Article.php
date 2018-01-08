@@ -9,7 +9,7 @@ class Article extends Base {
         $this->assign([
            "count"      => db("article")->count(),
            "cates"      => db("category")->select(),
-           "articles"   => db("article")->select()
+           "articles"   => db("article")->order("id desc")->select()
         ]);
         return $this->fetch();
     }
@@ -59,8 +59,33 @@ class Article extends Base {
         $this->redirect("/admin/article/lst");
     }
 
+    public function edit($id = 0) {
+        if($this->request->isGet()) {
+            $this->assign([
+                "cates"   => Category::all(),
+                "article"   => \app\admin\model\Article::get($id)
+            ]);
+            return $this->fetch();
+        }
+
+        // 获取参数，并保存....
+        $data = [
+            "title"    => input("title"),
+            "keywords" => input("keywords"),
+            "content"  => input("content"),
+            "author"   => input("author"),
+            "digest"   => input("digest"),
+            "cateid"   => input("cateid")
+        ];
+
+        // 保存
+        \app\admin\model\Article::get($id)->data($data)->save();
+
+        // 跳转
+        $this->redirect("/admin/article/lst");
+    }
+
     public function delete($id) {
-        echo "我要被删除了，555: 我是 $id";
         \think\Db::table("article")->where("id", "=", $id)->delete();
         $this->success("/admin/blog/list");
     }
