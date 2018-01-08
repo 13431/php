@@ -2,8 +2,7 @@
 
 namespace app\admin\controller;
 
-use think\Db;
-use think\Request;
+use app\admin\model\Category;
 
 class Article extends Base {
     public function lst() {
@@ -15,11 +14,12 @@ class Article extends Base {
         return $this->fetch();
     }
 
-    public function edit() {
-        return $this->fetch();
-    }
+    public function add() {
+        if($this->request->isGet()) {
+            $this->assign("cates", Category::all());
+            return $this->fetch();
+        }
 
-    public function save() {
         // 1. 传统的 $_GET/$_POST，不建议使用
         // 2. di，在参数列表里声明，让 tp 自动绑定数据到参数里
         // 3. 只在参数中注入 request 对象，然后就可以通过 request 获取所有东西了
@@ -47,10 +47,13 @@ class Article extends Base {
         // 2. Db::query
         //    Db::query("insert into article (title, content) values ('$title', '$content')");
         // 3. Db::....
-        //    Db::table("article")->insert($article);
-        // 4. 利用模型 Model
+        //    Db::table("article")->insert($data);
+        // 4. Db 的助手函数
+        //    db("article")->insert($data);
+        // 5. 利用模型 Model
         $a = new \app\admin\model\Article();
         $a->save($data);
+
 
         // 跳转到成功页面
         $this->redirect("/admin/article/lst");

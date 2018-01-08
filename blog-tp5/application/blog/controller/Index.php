@@ -7,12 +7,14 @@ use think\Db;
 class Index extends Base
 {
     public function index() {
-        $this->assign("articles", db("article")->paginate(2));
+        $this->assign("articles", db("article")->order("id desc")->paginate(5));
         return $this->fetch();
     }
 
     public function article($id) {
         $this->assign("article", db("article")->where("id", "=", $id)->find());
+        // 需要每次有点击，就将点击数增加一
+        // ....
         return $this->fetch();
     }
 
