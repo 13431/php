@@ -3,6 +3,7 @@
 namespace app\admin\controller;
 
 use app\admin\model\Category;
+use think\Loader;
 
 class Article extends Base {
     public function lst() {
@@ -41,6 +42,10 @@ class Article extends Base {
         ];
 
         // 验证
+        $validator = Loader::validate('ArticleValidate');
+        if( !$validator->check($data) ) {
+            $this->error( $validator->getError() );
+        }
 
         // 保存到数据库
         // 1. 传统的方式 .. new PDO...
@@ -77,6 +82,12 @@ class Article extends Base {
             "digest"   => input("digest"),
             "cateid"   => input("cateid")
         ];
+
+        // 验证
+        $validator = Loader::validate('ArticleValidate');
+        if( !$validator->check($data) ) {
+            $this->error( $validator->getError() );
+        }
 
         // 保存
         \app\admin\model\Article::get($id)->data($data)->save();

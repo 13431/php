@@ -1,0 +1,22 @@
+{extend name="_cfxfd/layout"}
+
+{block name="content"}
+
+{:renderBread(["类别管理", "添加类别"])}
+
+<form action="/admin/category/add" method="post" class="form form-horizontal" id="form-admin-add">
+    <input type="hidden" name="XDEBUG_SESSION_START" value="PHPSTORM" >
+    <div class="row cl">
+        <label class="form-label col-sm-2"><span class="c-red">*</span>类别名称：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" value="" placeholder="文章标题" id="title" name="name">
+        </div>
+    </div>
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+            <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+        </div>
+    </div>
+</form>
+
+{/block}

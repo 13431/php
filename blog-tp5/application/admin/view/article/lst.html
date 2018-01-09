@@ -28,7 +28,7 @@
         {volist name="articles" id="v"}
         <tr class="text-c">
             <td>{$v.id}</td>
-            <td class="text-l">{$v.title}</td>
+            <td><a href="/blog/index/article?id={$v.id}" target="_blank">{$v.title}</a></td>
             <td>{:getNameById($cates, $v.cateid)}</td>
             <td>{$v.author}</td>
             <td>{$v.time}</td>

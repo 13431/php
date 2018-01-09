@@ -1,0 +1,33 @@
+{extend name="_cfxfd/layout"}
+
+{block name="content"}
+
+{:renderBread(["类别管理", "修改类别"])}
+
+<form action="/admin/category/edit" method="post" class="form form-horizontal" id="form-admin-add">
+    <input type="hidden" name="XDEBUG_SESSION_START" value="PHPSTORM" >
+    <input type="hidden" name="id" value="{$category.id}" >
+    <div class="row cl">
+        <label class="form-label col-sm-2"><span class="c-red">*</span>文章标题：</label>
+        <div class="formControls col-xs-8 col-sm-9">
+            <input type="text" class="input-text" value="{$category.name}" placeholder="文章标题" id="name" name="name">
+        </div>
+    </div>
+    <div class="row cl">
+        <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+            <input onclick="return ck();" class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+        </div>
+    </div>
+</form>
+
+<script>
+    function ck() {
+        if($("#name").val().length < 2) {
+            alert("名字不能太短.");
+            return false;
+        }
+    }
+
+</script>
+
+{/block}
