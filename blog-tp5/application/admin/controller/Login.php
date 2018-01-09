@@ -24,7 +24,7 @@ class Login extends Controller {
         $user = User::where("username", $username)->find();
 
         if($user['password'] == $password) {
-            session("user", $user->data());
+            session("user", $user->getData());
             session("userid", $user['id']);
             $this->redirect("/admin/index/index");
         } else {
