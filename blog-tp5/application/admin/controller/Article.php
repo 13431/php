@@ -12,6 +12,8 @@ class Article extends Base {
            "cates"      => db("category")->select(),
            "articles"   => db("article")->order("id desc")->select()
         ]);
+
+//        echo "<script>alert('". url('article/5/del'). "');</script>";
         return $this->fetch();
     }
 
@@ -61,7 +63,7 @@ class Article extends Base {
 
 
         // 跳转到成功页面
-        $this->redirect("/admin/article/lst");
+        $this->redirect("/article/lst");
     }
 
     public function edit($id = 0) {
@@ -93,7 +95,7 @@ class Article extends Base {
         \app\admin\model\Article::get($id)->data($data)->save();
 
         // 跳转
-        $this->redirect("/admin/article/lst");
+        $this->redirect("/article/lst");
     }
 
     public function delete($id) {

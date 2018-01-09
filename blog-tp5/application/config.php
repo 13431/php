@@ -78,13 +78,13 @@ return [
     // +----------------------------------------------------------------------
 
     // PATHINFO变量名 用于兼容模式
-    'var_pathinfo'           => 's',
+    'var_pathinfo'           => '2',
     // 兼容PATH_INFO获取
     'pathinfo_fetch'         => ['ORIG_PATH_INFO', 'REDIRECT_PATH_INFO', 'REDIRECT_URL'],
     // pathinfo分隔符
     'pathinfo_depr'          => '/',
     // URL伪静态后缀
-    'url_html_suffix'        => 'html',
+    'url_html_suffix'        => '',
     // URL普通方式参数 用于自动生成
     'url_common_param'       => false,
     // URL参数方式 0 按名称成对解析 1 按顺序解析

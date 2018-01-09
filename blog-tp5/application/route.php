@@ -18,4 +18,13 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
 
+    '[article]'   => [
+        '/lst'     => "admin/article/lst",
+        ':id/edit' => "admin/article/edit",
+        ':id/del'  => "admin/article/delete",
+        ':id'      => "blog/index/article"
+    ],
+
+
+
 ];
